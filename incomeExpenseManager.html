@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .btn{
+            border: 2px solid black;
+            height: 39px;
+            width: 200px;
+            background-color: aquamarine;
+            color: red;
+        
+            border-radius: 22px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .btn_flex{
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+        .flex_div{
+            display: flex;
+            
+        }
+        .sec{
+            width: 33%;
+            height: 400px;
+            background-color: antiquewhite;
+            border: 1px solid green;
+        }
+        .input_style{
+          margin-top: 10px;
+          width: 200px;
+          height: 30px;
+          background-color: gold;
+          margin-left:20px;
+          font-size: 17px;
+          font-weight: bold;
+        }
+        .btnstyle{
+            border: 2px solid green;
+            height: 30px;
+            width: 150px;
+            color: green;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 25px;
+            margin-left: 100px;
+            margin-top: 10px;
+        }
+        .hide_button{
+            display: none;
+        }
+
+
+    </style>
+   
+</head>
+<body>
+  <div class="btn_flex" >
+      <button class="btn btn_income">Income</button>
+      <button class="btn btn_expance">Expense</button>
+      <button class="btn btn_display">display</button>
+  </div>  
+<div class="flex_div">
+    <div class="sec sec1"></div>
+    <div class="sec sec2"></div>
+    <div class="sec sec3"></div>
+
+</div>
+<script>
+let btn_income=document.querySelector(".btn_income");
+let btn_expance=document.querySelector(".btn_expance");
+let btn_display=document.querySelector(".btn_display");
+
+let sec1=document.querySelector(".sec1");
+let sec2=document.querySelector(".sec2");
+let sec3=document.querySelector(".sec3");
+
+btn_income.addEventListener("click",function(){
+
+    let inputTag=document.createElement("input");
+    let inputTag2=document.createElement("input");
+    let btnclick=document.createElement("button");
+
+     btnclick.setAttribute("class","btnstyle");
+     btnclick.innerText="submit";
+
+    inputTag.setAttribute("class","inputTag");
+    inputTag.setAttribute("placeholder","what type of income");
+
+    inputTag2.setAttribute("class","inputTag2");
+    inputTag2.setAttribute("placeholder","ente amount");
+////////////code for apply; css//////////
+inputTag.classList.add("input_style");
+inputTag2.classList.add("input_style");
+
+
+sec1.appendChild(inputTag);
+sec1.appendChild(inputTag2);
+sec1.appendChild(btnclick);
+
+btnclick.addEventListener("click",function(){
+   
+    alert("sourceofincome=:"+inputTag.value +"amount=:"+inputTag2.value);
+    btnclick.classList.add("hide_button");
+  
+   
+})
+
+//////////////////////////////////for displayfunctionality inside income///////////////////
+btn_display.addEventListener("click",function(){
+
+let h2tag=document.createElement("h2");
+let h2tag2=document.createElement("h2");
+h2tag.innerText=inputTag.value;
+h2tag2.innerText=inputTag2.value;
+
+sec3.appendChild(h2tag);
+sec3.appendChild(h2tag2);
+
+
+})
+    
+})
+//////////////////////////funcationality for Expance////////////////////
+
+btn_expance.addEventListener("click",function(){
+
+let inputTag=document.createElement("input");
+let inputTag2=document.createElement("input");
+let btnclick=document.createElement("button");
+
+ btnclick.setAttribute("class","btnstyle");
+ btnclick.innerText="submit";
+
+inputTag.setAttribute("class","inputTag");
+inputTag.setAttribute("placeholder","what type of Expance");
+
+inputTag2.setAttribute("class","inputTag2");
+inputTag2.setAttribute("placeholder","ente amount");
+////////////code for apply; css//////////
+inputTag.classList.add("input_style");
+inputTag2.classList.add("input_style");
+
+
+sec2.appendChild(inputTag);
+sec2.appendChild(inputTag2);
+sec2.appendChild(btnclick);
+
+btnclick.addEventListener("click",function(){
+    alert("sourceofincome=:"+inputTag.value +"amount=:"+inputTag2.value);
+btnclick.classList.add("hide_button");
+
+})
+
+//////////////////////////////////for display functionaly inside expence///////////////////
+btn_display.addEventListener("click",function(){
+
+let h2tag=document.createElement("h2");
+let h2tag2=document.createElement("h2");
+h2tag.innerText=inputTag.value;
+h2tag2.innerText=inputTag2.value;
+
+sec3.appendChild(h2tag);
+sec3.appendChild(h2tag2);
+
+
+})
+   
+
+
+})
+///////////////////////////display all data //////////////////////
+
+
+
+</script>
+
+
+
+</body>
+</html>
+
+
+<!-- Create a page whose title will be Income-Expense Manager. 
+On this page, you have to create three-button like Income, Expense, and Display.
+ When you click on the Income button, there should be some fields like 2 input fields and 1 Add button.
+ in these input fields, you are to enter the source of income like salary-1000 and click on the Add Button.
+ after clicking it the Alert box should open with the message like You added 1000 for Salary. Same process for the Expense button.
+ After entering all the data in the Income and Expense Button. When You Click on the Display Button.
+ All the Data you have added should be shown by the sequence on your page Like Income is.
+ whatever you entered here. same for Expense data. And also show the rest balance -->
